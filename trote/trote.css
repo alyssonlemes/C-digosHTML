@@ -10,20 +10,43 @@ body {
     color: var(--text-color);
 }
 
+:root{
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    /*Cor da borda dos links no fundo escuro*/
+    --stroke-color: rgba(255, 255, 255, 0.5);
+      /*Superficie dos links no fundo escuro*/
+    --surface-color: rgba(255, 255, 255, 0.05);
+     /*Superficie dos links no fundo escuro quando o mouse está em cima*/
+     --surface-color-ho: rgba(0, 0, 0, 0.02);
+     /*Faz um realce nos icones das redes sociais*/
+     --realce-color: rgba(255, 255, 255, 0.2);
+}
+
 .claro {
     --text-color: black; /* criando variável text-color*/
     --bg-url: url(./assets/bg-mobile-light.jpg); /* o -- cria variáveis */
+    /*Cor da borda dos links no fundo claro*/
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    /*Superficie dos links no fundo escuro*/
+    --surface-color: rgba(0, 0, 0, 0.05);
+    /*Superficie dos links no fundo claro quando o mouse está em cima*/
+     --surface-color-ho: rgba(0, 0, 0, 0.2);
+     /*Faz um realce nos icones das redes sociais*/
+     --realce-color: rgba(0, 0, 0, 0.2);
+
 
 }
 
 body * {
     font-family: 'Inter', sans-serif;
+    color: var(--text-color);
 }
 
 #container{
     width: 360px;
     height: 712px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--stroke-color);
     margin: 50px auto 0px;
     text-align: center;
     
@@ -47,20 +70,20 @@ body * {
 
 #container ul li a{
 display: flex;
-border: 1px solid rgba(255, 255, 255, 0.5);
+border: 1px solid var(--stroke-color); /*Colocando a variável para a cor da borda dos links*/
 align-items: center; /* alinha em relação à vertical*/
 justify-content: center; /* alinha em relação à horizontal*/
 padding:  16px 24px; /*16px top e bottom e 24 right e left*/
-background: rgba(255,255,255, 0.1);
+background: var(--surface-color);
 border-radius: 8px;
 text-decoration: none;
-color: gray;
+color: var(--stroke-color);
 font-weight: 500;
 transition: background 0.5s;
 }
 
 #container ul li a:hover{
-background: rgba(255, 255, 255, 0.05);
+background: var(--surface-color-ho);
 border: 1px solid white;
 
 
@@ -85,12 +108,18 @@ border: 1px solid white;
 
 #social-links a {
     padding: 16px;
-    border-radius: 50%;
+    border-radius: 30%;
     transition: background 1s;
 
 }
 
 #social-links a:hover{
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--realce-color);
  
+}
+
+footer{
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 14px;
 }

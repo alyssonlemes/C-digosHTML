@@ -21,6 +21,8 @@ body {
      --surface-color-ho: rgba(0, 0, 0, 0.02);
      /*Faz um realce nos icones das redes sociais*/
      --realce-color: rgba(255, 255, 255, 0.2);
+     /*background do switch com fundo escuro*/
+     --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .claro {
@@ -34,6 +36,8 @@ body {
      --surface-color-ho: rgba(0, 0, 0, 0.2);
      /*Faz um realce nos icones das redes sociais*/
      --realce-color: rgba(0, 0, 0, 0.2);
+         /*background do switch com fundo claro*/
+     --switch-bg-url: url(./assets/sun.svg);
 
 
 }
@@ -46,7 +50,7 @@ body * {
 #container{
     width: 360px;
     height: 712px;
-    border: 1px solid var(--stroke-color);
+    border: 0px solid var(--stroke-color);
     margin: 50px auto 0px;
     text-align: center;
     
@@ -103,23 +107,49 @@ border: 1px solid white;
     gap: 16px;
     padding: 24px 0px;
     font-size: 24px;
-
 }
 
 #social-links a {
     padding: 16px;
-    border-radius: 30%;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     transition: background 1s;
-
+    
 }
 
 #social-links a:hover{
     background: var(--realce-color);
- 
 }
 
 footer{
     padding: 24px 0px;
     text-align: center;
     font-size: 14px;
+}
+
+#switch{
+    border: 1px solid black;
+    position: relative;
+}
+
+#switch button{
+    border: 1px solid red;
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border-radius: 50%;
+    position: absolute; /*Posicionado em relação À div switch*/
+
+}
+
+#switch span{
+    border: 1px solid var(--stroke-color);
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border-radius: 9999px;
+
 }

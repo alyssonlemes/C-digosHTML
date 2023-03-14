@@ -1,60 +1,155 @@
-<!DOCTYPE html>
-<html lang="en" class="claro">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    color: var(--text-color);
+}
 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="trote.css"/>
-    </head>
-    <body>
-        <div id="container">
-            <div id="profile">
-                <img src="./assets/trote.png"
-                    alt="Trote solidário"/>
-                <p> @troteunifacef</p>
-            </div>
-            <!-- criar uma lista não ordenada -->
-            <ul>
-                <li> <a href="#"> Equipes </a> </li>
-                <li> <a href="#"> Regras </a> </li>
-                <li> <a href="#"> Gincana </a> </li>
-                <li> <a href="#"> Integração </a> </li>
-            </li>
-                </ul>
-       
+:root{
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    /*Cor da borda dos links no fundo escuro*/
+    --stroke-color: rgba(255, 255, 255, 0.5);
+      /*Superficie dos links no fundo escuro*/
+    --surface-color: rgba(255, 255, 255, 0.05);
+     /*Superficie dos links no fundo escuro quando o mouse está em cima*/
+     --surface-color-ho: rgba(0, 0, 0, 0.02);
+     /*Faz um realce nos icones das redes sociais*/
+     --realce-color: rgba(255, 255, 255, 0.2);
+     /*background do switch com fundo escuro*/
+     --switch-bg-url: url(./assets/moon-stars.svg);
+}
 
-        <div id="social-links">
-            <a href="https://github.com/alyssonlemes">
-            <ion-icon icon name="logo-github"></a></ion-icon>
-            </a>
+.claro {
+    --text-color: black; /* criando variável text-color*/
+    --bg-url: url(./assets/bg-mobile-light.jpg); /* o -- cria variáveis */
+    /*Cor da borda dos links no fundo claro*/
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    /*Superficie dos links no fundo escuro*/
+    --surface-color: rgba(0, 0, 0, 0.05);
+    /*Superficie dos links no fundo claro quando o mouse está em cima*/
+     --surface-color-ho: rgba(0, 0, 0, 0.2);
+     /*Faz um realce nos icones das redes sociais*/
+     --realce-color: rgba(0, 0, 0, 0.2);
+         /*background do switch com fundo claro*/
+     --switch-bg-url: url(./assets/sun.svg);
 
-            <a href="https://www.instagram.com/">
-            <ion-icon icon name="logo-instagram"></ion-icon>
-            </a>
 
-            <a href="https://www.youtube.com">
-            <ion-icon icon name="logo-youtube"></ion-icon>
-            </a>
+}
 
-            <a href="https://br.linkedin.com/in/alysson-lemes-054093231?trk=people-guest_people_search-card">
-            <ion-icon icon name="logo-linkedin"></ion-icon>
-            </a>    
-    </div>
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container{
+    width: 360px;
+    height: 712px;
+    border: 0px solid var(--stroke-color);
+    margin: 50px auto 0px;
+    text-align: center;
     
-    <footer>Desenvolvido por Alysson Lemes Diamantino, bacharel em Ciências da computação</footer>
+}
 
-</div>
+#profile img {
+    width: 75%;
+}
+#profile p {
+    font-weight: 500;
+    line-height: 24px;   
+}
+
+#container ul {
+    list-style: none;
+    display: flex; /* para deixar o layout livre*/
+    flex-direction: column; /*para trabalhar com coluna*/
+    gap: 10px;
+        
+}
+
+#container ul li a{
+display: flex;
+border: 1px solid var(--stroke-color); /*Colocando a variável para a cor da borda dos links*/
+align-items: center; /* alinha em relação à vertical*/
+justify-content: center; /* alinha em relação à horizontal*/
+padding:  16px 24px; /*16px top e bottom e 24 right e left*/
+background: var(--surface-color);
+border-radius: 8px;
+text-decoration: none;
+color: var(--stroke-color);
+font-weight: 500;
+transition: background 0.5s;
+}
+
+#container ul li a:hover{
+background: var(--surface-color-ho);
+border: 1px solid white;
 
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+}
+
+/*
+#social-links ion-icon {
+    margin-top: 25px;
+    margin-inline-end: 5px;
+    font-size: 225%;
+} */
+
+#social-links {
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0px;
+    font-size: 24px;
+}
+
+#social-links a {
+    padding: 16px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: background 1s;
     
+}
 
+#social-links a:hover{
+    background: var(--realce-color);
+}
 
-</body>
-</html>
+footer{
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#switch{
+    border: 1px solid black;
+    position: relative;
+}
+
+#switch button{
+    border: 1px solid red;
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border-radius: 50%;
+    position: absolute; /*Posicionado em relação À div switch*/
+
+}
+
+#switch span{
+    border: 1px solid var(--stroke-color);
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border-radius: 9999px;
+
+}
